@@ -293,8 +293,7 @@ class CameraViewController: UIViewController, AVCaptureDataOutputSynchronizerDel
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
         
-        coordinator.animate(
-            alongsideTransition: { _ in
+        coordinator.animate(alongsideTransition: { _ in
                 let interfaceOrientation = UIApplication.shared.statusBarOrientation
                 self.statusBarOrientation = interfaceOrientation
                 self.sessionQueue.async {
@@ -308,8 +307,7 @@ class CameraViewController: UIViewController, AVCaptureDataOutputSynchronizerDel
                         self.jetView.rotation = rotation
                     }
                 }
-        }, completion: nil
-        )
+        }, completion: nil)
     }
     
     // MARK: - KVO and Notifications
@@ -834,12 +832,17 @@ class CameraViewController: UIViewController, AVCaptureDataOutputSynchronizerDel
             let rowData = CVPixelBufferGetBaseAddress(depthFrame)! + Int(depthPoint.y) * CVPixelBufferGetBytesPerRow(depthFrame)
             // swift does not have an Float16 data type. Use UInt16 instead, and then translate
             var f16Pixel = rowData.assumingMemoryBound(to: UInt16.self)[Int(depthPoint.x)]
+            var f32Pixel = Float(0.0)
+
             CVPixelBufferUnlockBaseAddress(depthFrame, .readOnly)
             
-            var f32Pixel = Float(0.0)
-            var src = vImage_Buffer(data: &f16Pixel, height: 1, width: 1, rowBytes: 2)
-            var dst = vImage_Buffer(data: &f32Pixel, height: 1, width: 1, rowBytes: 4)
-            vImageConvert_Planar16FtoPlanarF(&src, &dst, 0)
+            withUnsafeMutablePointer(to: &f16Pixel) { f16RawPointer in
+                withUnsafeMutablePointer(to: &f32Pixel) { f32RawPointer in
+                    var src = vImage_Buffer(data: f16RawPointer, height: 1, width: 1, rowBytes: 2)
+                    var dst = vImage_Buffer(data: f32RawPointer, height: 1, width: 1, rowBytes: 4)
+                    vImageConvert_Planar16FtoPlanarF(&src, &dst, 0)
+                }
+            }
             
             // Convert the depth frame format to cm
             let depthString = String(format: "%.2f cm", f32Pixel * 100)

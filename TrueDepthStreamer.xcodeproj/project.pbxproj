@@ -31,15 +31,15 @@
 		2633CF1C1E7C65D500FC80E1 /* DepthToJETConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DepthToJETConverter.swift; sourceTree = "<group>"; };
 		2672370D1E79BFBF003D2EAA /* DepthToJET.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = DepthToJET.metal; sourceTree = "<group>"; };
 		267ED84D1ED7965A00898078 /* TrueDepthStreamer-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TrueDepthStreamer-Bridging-Header.h"; sourceTree = "<group>"; };
+		599ED10E56E1D2E68231F75C /* LICENSE.txt */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE.txt; sourceTree = "<group>"; };
 		6D20BC0F1FFE665100496684 /* PointCloudMetalView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PointCloudMetalView.mm; sourceTree = "<group>"; };
+		A4E963F33EDFA721A40CA8B5 /* SampleCode.xcconfig */ = {isa = PBXFileReference; name = SampleCode.xcconfig; path = Configuration/SampleCode.xcconfig; sourceTree = "<group>"; };
 		C3444A731FFE6110002D901D /* PointCloudMetalView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PointCloudMetalView.h; sourceTree = "<group>"; };
 		C3444A741FFE6110002D901D /* AAPLTransforms.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AAPLTransforms.mm; sourceTree = "<group>"; };
 		C3444A751FFE6110002D901D /* PointCloud.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = PointCloud.metal; sourceTree = "<group>"; };
 		C3444A781FFE6110002D901D /* AAPLTransforms.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAPLTransforms.h; sourceTree = "<group>"; };
 		C3B256711FDE655100617DD7 /* HistogramCalculator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistogramCalculator.m; sourceTree = "<group>"; };
 		C3B256721FDE655200617DD7 /* HistogramCalculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistogramCalculator.h; sourceTree = "<group>"; };
-		CCCD7910CCCD7C9000000001 /* LICENSE.txt */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE.txt; sourceTree = "<group>"; };
-		CCE67AC0CCE54C5000000001 /* SampleCode.xcconfig */ = {isa = PBXFileReference; name = SampleCode.xcconfig; path = Configuration/SampleCode.xcconfig; sourceTree = "<group>"; };
 		E414FC6C1D5921FD0007C979 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		E422DFB71CEF894F0047D7A4 /* TrueDepthStreamer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrueDepthStreamer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E422DFBF1CEF894F0047D7A4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -75,6 +75,14 @@
 			path = Shaders;
 			sourceTree = "<group>";
 		};
+		5EC63FFD9D9A3793DBA4755D /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				A4E963F33EDFA721A40CA8B5 /* SampleCode.xcconfig */,
+			);
+			name = Configuration;
+			sourceTree = "<group>";
+		};
 		8F7DEDF83CEB2358D1CCC092 /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
@@ -93,23 +101,6 @@
 			path = PointCloud;
 			sourceTree = "<group>";
 		};
-		CCCD8E90CCCD7B8000000001 /* LICENSE */ = {
-			isa = PBXGroup;
-			children = (
-				CCCD7910CCCD7C9000000001 /* LICENSE.txt */,
-			);
-			name = LICENSE;
-			path = LICENSE;
-			sourceTree = "<group>";
-		};
-		CCE52550CCE525B000000001 /* Configuration */ = {
-			isa = PBXGroup;
-			children = (
-				CCE67AC0CCE54C5000000001 /* SampleCode.xcconfig */,
-			);
-			name = Configuration;
-			sourceTree = "<group>";
-		};
 		E422DFAE1CEF894F0047D7A4 = {
 			isa = PBXGroup;
 			children = (
@@ -117,8 +108,8 @@
 				E422DFB91CEF894F0047D7A4 /* TrueDepthStreamer */,
 				E422DFB81CEF894F0047D7A4 /* Products */,
 				8F7DEDF83CEB2358D1CCC092 /* Configuration */,
-				CCE52550CCE525B000000001 /* Configuration */,
-				CCCD8E90CCCD7B8000000001 /* LICENSE */,
+				5EC63FFD9D9A3793DBA4755D /* Configuration */,
+				F42A8FA83BE709B991729441 /* LICENSE */,
 			);
 			sourceTree = "<group>";
 		};
@@ -152,6 +143,15 @@
 			path = TrueDepthStreamer;
 			sourceTree = "<group>";
 		};
+		F42A8FA83BE709B991729441 /* LICENSE */ = {
+			isa = PBXGroup;
+			children = (
+				599ED10E56E1D2E68231F75C /* LICENSE.txt */,
+			);
+			name = LICENSE;
+			path = LICENSE;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -162,7 +162,6 @@
 				E422DFB31CEF894F0047D7A4 /* Sources */,
 				E422DFB41CEF894F0047D7A4 /* Frameworks */,
 				E422DFB51CEF894F0047D7A4 /* Resources */,
-				A6606580A660405000000001,
 			);
 			buildRules = (
 			);
@@ -180,11 +179,12 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 1100;
+				LastUpgradeCheck = 1300;
 				ORGANIZATIONNAME = Apple;
 				TargetAttributes = {
 					E422DFB61CEF894F0047D7A4 = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = A93A5CM278;
 						LastSwiftMigration = 1100;
 						ProvisioningStyle = Automatic;
 					};
@@ -266,7 +266,7 @@
 /* Begin XCBuildConfiguration section */
 		E422DFC71CEF894F0047D7A4 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CCE67AC0CCE54C5000000001 /* SampleCode.xcconfig */;
+			baseConfigurationReference = A4E963F33EDFA721A40CA8B5 /* SampleCode.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPRESSION = lossless;
@@ -290,6 +290,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -328,7 +329,7 @@
 		};
 		E422DFC81CEF894F0047D7A4 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CCE67AC0CCE54C5000000001 /* SampleCode.xcconfig */;
+			baseConfigurationReference = A4E963F33EDFA721A40CA8B5 /* SampleCode.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPRESSION = "respect-asset-catalog";
@@ -352,6 +353,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -384,7 +386,7 @@
 		};
 		E422DFCA1CEF894F0047D7A4 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CCE67AC0CCE54C5000000001 /* SampleCode.xcconfig */;
+			baseConfigurationReference = A4E963F33EDFA721A40CA8B5 /* SampleCode.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -410,7 +412,7 @@
 		};
 		E422DFCB1CEF894F0047D7A4 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CCE67AC0CCE54C5000000001 /* SampleCode.xcconfig */;
+			baseConfigurationReference = A4E963F33EDFA721A40CA8B5 /* SampleCode.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;

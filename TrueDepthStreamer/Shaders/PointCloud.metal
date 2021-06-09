@@ -49,16 +49,13 @@ vertexShaderPoints(uint vertexID [[ vertex_id ]],
 fragment float4 fragmentShaderPoints(RasterizerDataColor in [[stage_in]],
                                      texture2d<float> colorTexture [[ texture(0) ]])
 {
-    if (in.depth < 1.0)
-        discard_fragment();
-    else
-    {
-        constexpr sampler textureSampler (mag_filter::linear,
-                                          min_filter::linear);
-        
+    if (in.depth >= 1.0) {
+        constexpr sampler textureSampler (mag_filter::linear, min_filter::linear);
         const float4 colorSample = colorTexture.sample (textureSampler, in.coor);
         return colorSample;
     }
+    discard_fragment();
+    return 0;
 }
 
 
